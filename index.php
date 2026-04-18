@@ -11,13 +11,13 @@ $urut = isset($_COOKIE['urut_berdasarkan']) ? $_COOKIE['urut_berdasarkan'] : "Ta
 $arah = isset($_COOKIE['arah']) ? $_COOKIE['arah'] : "Ascending";
 
 if ($urut == "Tanggal") {
-    if ($arah == "Ascending") {
+    if ($arah == "Ascending" || $arah == "Asc" ) {
         ksort($data); 
     } else {
         krsort($data); 
     }
 } else if ($urut == "Nominal") {
-    if ($arah == "Ascending") {
+    if ($arah == "Ascending" || $arah == "Asc") {
         asort($data); 
     } else {
         arsort($data); 
