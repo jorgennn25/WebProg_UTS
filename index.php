@@ -43,12 +43,11 @@ if ($urut == "Tanggal") {
     </style>
 </head>
 <body class="body">
-    <a href='tambah.php'>[Tambah Transaksi]</a>
-    <a href='setting.php'>[Setting]</a>
+    <a href='tambah.php'>[Tambah Transaksi]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='setting.php'>[Setting]</a>
 
     <hr class="hr">
 
-    <h2>Data Transaksi</h2>
+    <h1 class="hl">Data Transaksi</h1>
 
     <?php if (empty($data)): ?>
     <p>Belum ada data</p>

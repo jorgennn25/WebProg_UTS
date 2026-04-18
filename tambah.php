@@ -23,11 +23,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Transaksi</title>
-</head>
-<body>
+    <title>Project WEBPROG</title><style>
+        .body {
+            font-family: Arial, sans-serif;
+        }.hl{
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
 
-<h2>Tambah Transaksi</h2>
+    </style>
+</head>
+<body class="body">
+
+<h1>Tambah Transaksi</h1>
 
 <form action="tambah.php" method="POST">
     Tanggal: <input type="date" name="tanggal" required><br><br>
@@ -36,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <br>
-<a href="index.php">Kembali</a>
+<a href="index.php">&laquo; Kembali</a>
 
 </body>
 </html>
