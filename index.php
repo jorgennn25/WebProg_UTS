@@ -7,8 +7,22 @@ if (!is_array($data)) {
     $data = [];
 }
 
-// urutkan ascending (tanggal lama → baru)
-ksort($data);
+$urut = isset($_COOKIE['urut_berdasarkan']) ? $_COOKIE['urut_berdasarkan'] : "Tanggal";
+$arah = isset($_COOKIE['arah']) ? $_COOKIE['arah'] : "Ascending";
+
+if ($urut == "Tanggal") {
+    if ($arah == "Ascending") {
+        ksort($data); 
+    } else {
+        krsort($data); 
+    }
+} else if ($urut == "Nominal") {
+    if ($arah == "Ascending") {
+        asort($data); 
+    } else {
+        arsort($data); 
+    }
+}
 ?>
 
 <!DOCTYPE html>
