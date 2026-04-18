@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,8 @@
     <form action="proses_tambah.php" method="post">
         Tanggal: <input type="date" name="tanggal" required><br><br>
         Nominal: <input type="number" name="nominal" required min="1"><br><br>
-        <input type="submit" value="Simpan"><br><br>
-    </form> 
+        <input type="submit" value="Simpan"><br><br> 
+    </form>
 
     <a href='index.php'><< Kembali</a>
 </body>
