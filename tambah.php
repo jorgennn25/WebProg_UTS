@@ -1,26 +1,42 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $tanggal = $_POST['tanggal'];
+    $nominal = $_POST['nominal'];
+
+    $data = isset($_COOKIE['transaksi'])
+        ? json_decode($_COOKIE['transaksi'], true)
+        : [];
+
+    if (!is_array($data)) {
+        $data = [];
+    }
+
+    $data[$tanggal] = $nominal;
+
+    setcookie('transaksi', json_encode($data), time() + 86400, "/");
+
+    header("Location: index.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project WEBPROG</title>
-
-    <style>
-        .body {
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-        }
-    </style>
+    <title>Tambah Transaksi</title>
 </head>
-<body class="body">
-    <h1 class="h1">Tambah Transaksi</h1>
-    <form action="proses_tambah.php" method="post">
-        Tanggal: <input type="date" name="tanggal" required><br><br>
-        Nominal: <input type="number" name="nominal" required min="1"><br><br>
-        <input type="submit" value="Simpan"><br><br> 
-    </form>
+<body>
 
-    <a href='index.php'><< Kembali</a>
+<h2>Tambah Transaksi</h2>
+
+<form action="tambah.php" method="POST">
+    Tanggal: <input type="date" name="tanggal" required><br><br>
+    Nominal: <input type="number" name="nominal" required step="1000" min="0"><br><br>
+    <button type="submit">Simpan</button>
+</form>
+
+<br>
+<a href="index.php">Kembali</a>
+
 </body>
 </html>
